@@ -21,7 +21,7 @@ DB_PASSWORD=
 ```
 
 5. Run `php artisan migrate` to create tasks table in the db.
-6. Run `npm run build` to build your Bootstrap 5, JavaScript and CSS files. _(Ignore Sass warnings)_
+6. Run `npm run build` to build your Bootstrap 5, JavaScript and CSS files. _(Ignore Sass files warnings)_
 7. If you have already LAMP stack, run it in the browser or `php artisan serve`, then run it in the browser.
 
 # About test project
