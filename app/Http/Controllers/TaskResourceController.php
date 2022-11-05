@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateTaskRequest;
+use App\Http\Requests\StoreTaskRequest;
 use App\Models\Task;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 
 class TaskResourceController extends Controller
 {
@@ -16,7 +15,7 @@ class TaskResourceController extends Controller
         return view('main', compact('tasks'));
     }
 
-    public function store(CreateTaskRequest $request): RedirectResponse
+    public function store(StoreTaskRequest $request): RedirectResponse
     {
         $name = $request->input('name');
 
@@ -28,14 +27,7 @@ class TaskResourceController extends Controller
         return redirect(route('tasks.index'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Task $task): RedirectResponse
+    public function update(Task $task): RedirectResponse
     {
         $task->is_done = true;
         $task->save();
