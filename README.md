@@ -33,7 +33,7 @@ templates, etc.
 ### Front-end
 
 > After forking the app from  https://github.com/MarketingLoungePartnership/to-do-list I realised that
-it is Laravel 9 app. For this reason, I made a couple of changes to use Vite properly with SASS and **Bootstrap 5 CSS**
+it is Laravel 9 app. For this reason, I made a couple of changes to use Vite properly with SASS and **Bootstrap 5**
 
 > I used Fontawesome 6 library for the icons.
 
