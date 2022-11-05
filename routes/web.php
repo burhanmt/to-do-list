@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TaskResourceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// This is main page redirection controller.
 Route::get('/', function () {
-    return view('main');
+    return redirect('/tasks');
 });
+
+Route::resource('tasks', TaskResourceController::class)
+    ->only(['index', 'store', 'update', 'destroy']);

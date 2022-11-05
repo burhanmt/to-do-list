@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MLP To-Do</title>
 
+    <!-- Fontawesome 6.2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+
     <!-- JS & Bootstrap Css -->
     @vite(['resources/js/app.js'])
 
@@ -21,8 +24,8 @@
     </div>
     <div class="row">
         <div class="col-md-4">
-            <!-- Navigation Menu -->
-            @include('partials.nav')
+            <!-- Add Task Section -->
+            @include('partials.add-tasks')
         </div>
         <div class="col-md-8">
             <!-- Page content -->
@@ -30,5 +33,7 @@
         </div>
     </div>
 </div>
+<!-- Footer -->
+@include('partials.footer')
 </body>
 </html>
