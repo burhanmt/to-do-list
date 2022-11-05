@@ -9,12 +9,19 @@ use Illuminate\Http\RedirectResponse;
 
 class TaskResourceController extends Controller
 {
+    /**
+     * @return View
+     */
     public function index(): View
     {
         $tasks = Task::all();
         return view('main', compact('tasks'));
     }
 
+    /**
+     * @param StoreTaskRequest $request
+     * @return RedirectResponse
+     */
     public function store(StoreTaskRequest $request): RedirectResponse
     {
         $name = $request->input('name');
@@ -27,6 +34,10 @@ class TaskResourceController extends Controller
         return redirect(route('tasks.index'));
     }
 
+    /**
+     * @param Task $task
+     * @return RedirectResponse
+     */
     public function update(Task $task): RedirectResponse
     {
         $task->is_done = true;
@@ -35,6 +46,10 @@ class TaskResourceController extends Controller
         return redirect(route('tasks.index'));
     }
 
+    /**
+     * @param Task $task
+     * @return RedirectResponse
+     */
     public function destroy(Task $task): RedirectResponse
     {
         $task->delete();
